@@ -23,7 +23,7 @@ let chiedu = new Person({
 })
 
 //save New Person and Catch Error if any
-Bata.save()
+chiedu.save()
 .then(() => console.log('New Person Saved'))
 .catch((error) => console.log(error.message))
 
@@ -160,7 +160,7 @@ let createPeople = (arrayOfPeople, done) => {
     async function removeMany(){
     try{
         const deleteMany = await Person
-        .deleteMany({name : 'Mary'}) // using .deleteMany because Node says .remove is not a fucntion, it is deprecated.
+        .deleteMany({name : 'goodnews'}) // using .deleteMany because Node says .remove is not a fucntion, it is deprecated.
     }catch(error){
         console.log(error.message)
     }
@@ -175,7 +175,7 @@ let createPeople = (arrayOfPeople, done) => {
         .find({favouriteFoods :'beans'})
         .sort('age')
         .limit(2)
-        .select('-age')
+        .select('age')
         .exec()
         console.log(findAll)
     }  catch (error){
